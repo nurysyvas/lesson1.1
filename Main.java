@@ -8,14 +8,14 @@ public class Main {
         for (int i=0 ; i<ar.length; i++){
             float x =((float) (( Math.random() * 4)));
             int y =(int) (Math.random() * 4);
-            int R =5;
+            int R =(int) (Math.random() * 8);
             Circle circle = new Circle(x,y,R);
             ar[i] = circle;
             ar[i].getR();
             ar[i].S();
-            ar[i].setR(5);
 
         }
+        summScircl(ar);
 
         double k = ((ar[1].getY()-ar[0].getY())/(ar[1].getX()-ar[0].getX()));
         double b = ar[0].getY()-k * ar[0].getX();
@@ -28,6 +28,13 @@ public class Main {
                     System.out.println("centers of circles not coincide");
                 }
             }
+    }
+    private static void summScircl(Circle[] ar){
+        float summS = 0;
+        for (Circle i : ar){
+              summS += i.S();
+        }
+        System.out.println(summS);
     }
 }
 
